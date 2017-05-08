@@ -59,19 +59,5 @@ export default function gqErrorsMiddleware(opts = {}) {
 }
 
 function noticeAbsentStack() {
-  return `
-    If you using 'express-graphql', you may get server stack-trace for error.
-    Just tune 'formatError' to return 'stack' with stack-trace:
-
-    import graphqlHTTP from 'express-graphql';
-
-    const graphQLMiddleware = graphqlHTTP({
-      schema: myGraphQLSchema,
-      formatError: (error) => ({
-        message: error.message,
-        stack: process.env.NODE_ENV === 'development' ? error.stack.split('\\n') : null,
-      })
-    });
-
-    app.use('/graphql', graphQLMiddleware);`;
+  return '';
 }
